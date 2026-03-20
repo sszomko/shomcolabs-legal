@@ -1,57 +1,726 @@
 <!doctype html>
-<html lang="en">
+<html lang="pl">
 <head>
+  
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>ShomCoLabs | Nadpłacaj | Terms and Conditions</title>
+  <link rel="icon" href="icons/ic_brand_logo.png">  
+  <title>ShomCoLabs</title>
   <style>
-    :root{--bg:#070b16;--panel:#0f1730;--text:#eef2ff;--muted:#9eabcf;--primary:#5B8CFF;--teal:#4FD1C5;--line:rgba(126,149,255,.18);--radius:22px;--shadow:0 20px 60px rgba(0,0,0,.35)}
-    *{box-sizing:border-box}html{scroll-behavior:smooth}
-    body{margin:0;color:var(--text);background:radial-gradient(circle at 15% 15%, rgba(91,140,255,.22), transparent 32%),radial-gradient(circle at 80% 5%, rgba(79,209,197,.10), transparent 24%),linear-gradient(180deg,#05070f 0%,#090d1a 45%,#070b16 100%);font-family:"IBM Plex Mono","JetBrains Mono","SFMono-Regular","Consolas","Liberation Mono","Menlo",monospace}
-    body::before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.08;background-image:linear-gradient(rgba(255,255,255,.06) 1px, transparent 1px),linear-gradient(90deg, rgba(255,255,255,.05) 1px, transparent 1px);background-size:28px 28px;mask-image:linear-gradient(180deg, rgba(0,0,0,.75), transparent 90%)}
-    a{color:inherit;text-decoration:none} img{max-width:100%;display:block}
-    .container{width:min(1160px, calc(100% - 32px));margin:0 auto}
-    .site-header{position:sticky;top:0;z-index:30;backdrop-filter:blur(16px);background:rgba(7,11,22,.72);border-bottom:1px solid rgba(255,255,255,.06)}
-    .nav{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:78px;flex-wrap:wrap}
-    .brand{display:flex;align-items:center;gap:14px;min-width:0}.brand-logo{width:44px;height:44px;border-radius:14px;padding:6px;background:linear-gradient(135deg, rgba(91,140,255,.24), rgba(79,209,197,.14));border:1px solid rgba(255,255,255,.08);box-shadow:var(--shadow)}
-    .brand-copy strong{font-size:1rem;letter-spacing:.03em}.brand-copy span{color:var(--muted);font-size:.78rem}
-    .nav-links{display:flex;align-items:center;gap:10px;flex-wrap:wrap}.tab{display:inline-flex;align-items:center;gap:10px;padding:11px 14px;border:1px solid rgba(255,255,255,.08);background:rgba(255,255,255,.03);border-radius:999px;color:var(--text);font-size:.84rem;transition:.2s ease}.tab:hover,.tab.active{transform:translateY(-1px);background:linear-gradient(135deg, rgba(91,140,255,.18), rgba(122,124,255,.18));border-color:rgba(126,149,255,.35)}
-    .hero{padding:52px 0 26px}.hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:28px;align-items:stretch}.panel{background:linear-gradient(180deg, rgba(15,23,48,.88), rgba(10,16,33,.92));border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow)}
-    .hero-copy{padding:38px;position:relative;overflow:hidden}.hero-copy::after{content:"NADPLACAJ//FLOW";position:absolute;right:-16px;top:18px;font-size:.7rem;letter-spacing:.25em;color:rgba(255,255,255,.10);writing-mode:vertical-rl}.kicker{display:inline-flex;align-items:center;gap:10px;color:var(--teal);background:rgba(79,209,197,.08);border:1px solid rgba(79,209,197,.16);border-radius:999px;padding:8px 12px;font-size:.76rem;margin-bottom:18px}
-    h1{margin:0 0 16px;font-size:clamp(2rem,5vw,4rem);line-height:1;letter-spacing:-.04em;text-transform:uppercase}.gradient-text{background:linear-gradient(90deg,#fff 0%,#bfd4ff 35%,#6f8dff 70%,#4FD1C5 100%);-webkit-background-clip:text;background-clip:text;color:transparent}
-    .hero-copy p,.legal-sidebar p{margin:0;color:var(--muted);line-height:1.8;font-size:.98rem}.cta-row{display:flex;gap:12px;flex-wrap:wrap;margin-top:26px}.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:46px;padding:0 18px;border-radius:14px;font-size:.9rem;border:1px solid rgba(255,255,255,.08);transition:.2s ease}.btn-primary{color:#081225;background:linear-gradient(135deg,#7fa7ff,#4FD1C5);border:none}.btn-secondary{color:var(--text);background:rgba(255,255,255,.03)}
-    .hero-side{padding:26px;display:flex;flex-direction:column;gap:18px}.brand-card{display:grid;grid-template-columns:110px 1fr;gap:18px;align-items:center;padding:22px;background:linear-gradient(145deg, rgba(13,18,36,.96), rgba(10,15,28,.9));border-radius:20px;border:1px solid rgba(255,255,255,.08)}.hippo{width:100%;filter:drop-shadow(0 10px 30px rgba(0,0,0,.45))}.brand-text strong{display:block;font-size:1.5rem;letter-spacing:-.04em}.brand-text p{margin:.55rem 0 0;color:var(--muted);line-height:1.7;font-size:.88rem}
-    .metric-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}.metric{padding:18px;border-radius:18px;background:rgba(255,255,255,.035);border:1px solid rgba(255,255,255,.07)}.metric small{display:block;color:var(--muted);margin-bottom:8px}.metric strong{font-size:1.15rem}
-    .section{padding:18px 0 34px}.cards{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px}.card{padding:22px;background:linear-gradient(180deg, rgba(15,23,48,.86), rgba(9,14,27,.92));border:1px solid rgba(255,255,255,.08);border-radius:20px;box-shadow:var(--shadow)}.card .icon{width:42px;height:42px;display:grid;place-items:center;border-radius:14px;margin-bottom:14px;background:linear-gradient(135deg, rgba(91,140,255,.22), rgba(79,209,197,.16));border:1px solid rgba(255,255,255,.08);font-size:1.2rem}.card h3{margin:0 0 10px;font-size:1rem;text-transform:uppercase;letter-spacing:.04em}.card p{margin:0;color:var(--muted);line-height:1.7;font-size:.86rem}
-    .legal-wrap{padding:30px 0 60px}.legal-layout{display:grid;grid-template-columns:270px 1fr;gap:24px}.legal-sidebar{position:sticky;top:96px;align-self:start;padding:18px}.legal-sidebar h2{margin:0 0 14px;font-size:1rem;text-transform:uppercase;letter-spacing:.08em}.legal-links{display:flex;flex-direction:column;gap:10px;margin-top:16px}.legal-main{padding:30px}.legal-main .legal-doc{color:var(--text)}.legal-doc strong:first-child{display:block;margin-bottom:10px;font-size:2rem;letter-spacing:-.04em;text-transform:uppercase}.legal-doc p,.legal-doc li{color:var(--muted);line-height:1.85;font-size:.92rem}.legal-doc strong{color:#f7f9ff}.legal-doc ul{padding-left:1.25rem}.legal-doc a{color:#8db2ff;text-decoration:underline}
-    .footer{padding:22px 0 40px;color:var(--muted);font-size:.8rem}.footer-inner{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;border-top:1px solid rgba(255,255,255,.07);padding-top:18px}.code-tag{color:var(--teal)}
-    @media (max-width:980px){.hero-grid,.legal-layout,.cards{grid-template-columns:1fr}.legal-sidebar{position:static}}
-    @media (max-width:680px){.hero-copy,.hero-side,.legal-main{padding:22px}.brand-card{grid-template-columns:1fr}}
+    :root {
+      --bg: #070b16;
+      --panel: #0f1730;
+      --panel-2: #121c3d;
+      --text: #eef2ff;
+      --muted: #9eabcf;
+      --primary: #5B8CFF;
+      --teal: #4FD1C5;
+      --line: rgba(126,149,255,.18);
+      --radius: 22px;
+      --shadow: 0 20px 60px rgba(0,0,0,.35);
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      color: var(--text);
+      background:
+        radial-gradient(circle at 15% 15%, rgba(91,140,255,.22), transparent 32%),
+        radial-gradient(circle at 80% 5%, rgba(79,209,197,.10), transparent 24%),
+        linear-gradient(180deg, #05070f 0%, #090d1a 45%, #070b16 100%);
+      font-family: "IBM Plex Mono","JetBrains Mono","SFMono-Regular","Consolas","Liberation Mono","Menlo",monospace;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      opacity: .08;
+      background-image:
+        linear-gradient(rgba(255,255,255,.06) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.05) 1px, transparent 1px);
+      background-size: 28px 28px;
+      mask-image: linear-gradient(180deg, rgba(0,0,0,.75), transparent 90%);
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    .container {
+      width: min(1160px, calc(100% - 32px));
+      margin: 0 auto;
+    }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 30;
+      backdrop-filter: blur(16px);
+      background: rgba(7,11,22,.72);
+      border-bottom: 1px solid rgba(255,255,255,.06);
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      min-height: 78px;
+      flex-wrap: wrap;
+      padding: 14px 0;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      min-width: 0;
+    }
+
+    .brand-logo {
+      width: 44px;
+      height: 44px;
+      border-radius: 12px;
+      flex: 0 0 44px;
+    }
+
+    .brand-copy strong {
+      display: block;
+      font-size: 1rem;
+      letter-spacing: .03em;
+    }
+
+    .brand-copy span {
+      color: var(--muted);
+      font-size: .78rem;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .tab,
+    .menu-button {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 11px 14px;
+      border: 1px solid rgba(255,255,255,.08);
+      background: rgba(255,255,255,.03);
+      border-radius: 999px;
+      color: var(--text);
+      font-size: .84rem;
+      transition: .2s ease;
+      cursor: pointer;
+      font-family: inherit;
+    }
+
+    .tab:hover,
+    .tab.active,
+    .menu-button:hover {
+      transform: translateY(-1px);
+      background: linear-gradient(135deg, rgba(91,140,255,.18), rgba(122,124,255,.18));
+      border-color: rgba(126,149,255,.35);
+    }
+
+    .dropdown {
+      position: relative;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      top: calc(100% + 10px);
+      right: 0;
+      min-width: 290px;
+      background: linear-gradient(180deg, rgba(15,23,48,.97), rgba(10,16,33,.98));
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      box-shadow: var(--shadow);
+      overflow: hidden;
+      z-index: 50;
+    }
+
+    .dropdown:hover .dropdown-content,
+    .dropdown:focus-within .dropdown-content {
+      display: block;
+    }
+
+    .dropdown-group {
+      padding: 12px;
+      border-bottom: 1px solid rgba(255,255,255,.06);
+    }
+
+    .dropdown-group:last-child {
+      border-bottom: none;
+    }
+
+    .dropdown-title {
+      display: block;
+      color: var(--teal);
+      font-size: .76rem;
+      margin-bottom: 8px;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+    }
+
+    .dropdown-link {
+      display: block;
+      padding: 10px 12px;
+      border-radius: 12px;
+      color: var(--text);
+      font-size: .88rem;
+    }
+
+    .dropdown-link:hover {
+      background: rgba(255,255,255,.05);
+    }
+
+    .lang-switch {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,.08);
+      background: rgba(255,255,255,.03);
+    }
+
+    .lang-btn {
+      border: none;
+      background: transparent;
+      color: var(--muted);
+      padding: 8px 12px;
+      border-radius: 999px;
+      font-family: inherit;
+      font-size: .78rem;
+      cursor: pointer;
+    }
+
+    .lang-btn.active {
+      background: linear-gradient(135deg, rgba(91,140,255,.25), rgba(79,209,197,.18));
+      color: var(--text);
+    }
+
+    .hero {
+      padding: 42px 0 24px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.15fr .85fr;
+      gap: 28px;
+      align-items: stretch;
+    }
+
+    .panel {
+      background: linear-gradient(180deg, rgba(15,23,48,.88), rgba(10,16,33,.92));
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+
+    .hero-copy {
+      padding: 38px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-copy::after {
+      content: "SHOMCOLABS//LEGAL";
+      position: absolute;
+      right: -16px;
+      top: 18px;
+      font-size: .7rem;
+      letter-spacing: .25em;
+      color: rgba(255,255,255,.10);
+      writing-mode: vertical-rl;
+    }
+
+    .kicker {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--teal);
+      background: rgba(79,209,197,.08);
+      border: 1px solid rgba(79,209,197,.16);
+      border-radius: 999px;
+      padding: 8px 12px;
+      font-size: .76rem;
+      margin-bottom: 18px;
+    }
+
+    .buycoffee-box {
+      display: flex;
+      flex-direction: column;
+      align-items: center;   /* wyśrodkowanie poziome */
+      justify-content: center;
+      text-align: center;
+      gap: 16px;             /* odstęp między elementami */
+      padding: 24px;
+    }
+
+    .buycoffee-box img {
+      max-width: 100%;
+      height: auto;
+    }
+
+    /* QR */
+    .buy_coffee_logo {
+      max-width: 180px;
+      border-radius: 12px;
+    }
+
+    /* przycisk */
+    .buycoffee-box a img {
+      width: 166px;
+      height: 43px;
+    }
+
+    h1 {
+      margin: 0 0 16px;
+      font-size: clamp(2rem, 5vw, 3.8rem);
+      line-height: 1;
+      letter-spacing: -.04em;
+      text-transform: uppercase;
+    }
+
+    .gradient-text {
+      background: linear-gradient(90deg, #fff 0%, #bfd4ff 35%, #6f8dff 70%, #4FD1C5 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .hero-copy p,
+    .about-card p,
+    .banner p {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.8;
+      font-size: .98rem;
+    }
+
+    .cta-row {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 26px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      min-height: 46px;
+      padding: 0 18px;
+      border-radius: 14px;
+      font-size: .9rem;
+      border: 1px solid rgba(255,255,255,.08);
+      transition: .2s ease;
+    }
+
+    .btn-primary {
+      color: #081225;
+      background: linear-gradient(135deg, #7fa7ff, #4FD1C5);
+      border: none;
+    }
+
+    .btn-secondary {
+      color: var(--text);
+      background: rgba(255,255,255,.03);
+    }
+
+    .hero-side {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+
+    .about-card,
+    .banner,
+    .product-card {
+      padding: 24px;
+    }
+
+    .about-card h2,
+    .banner h2,
+    .product-card h2 {
+      margin: 0 0 12px;
+      font-size: 1rem;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+    }
+
+    .product-list {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 14px;
+    }
+
+    .product-item {
+      padding: 16px;
+      border-radius: 16px;
+      background: rgba(255,255,255,.035);
+      border: 1px solid rgba(255,255,255,.07);
+    }
+
+    .product-item small {
+      display: block;
+      color: var(--muted);
+      margin-bottom: 8px;
+    }
+
+    .product-item strong {
+      display: block;
+      margin-bottom: 10px;
+      font-size: 1rem;
+    }
+
+    .product-links {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .product-links a {
+      color: #bfd4ff;
+      font-size: .84rem;
+    }
+
+    .legal-wrap {
+      padding: 18px 0 60px;
+    }
+
+    .legal-layout {
+      display: grid;
+      grid-template-columns: 270px 1fr;
+      gap: 24px;
+    }
+
+    .legal-sidebar {
+      position: sticky;
+      top: 96px;
+      align-self: start;
+      padding: 18px;
+    }
+
+    .legal-sidebar h2 {
+      margin: 0 0 14px;
+      font-size: 1rem;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+    }
+
+    .legal-sidebar p {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.8;
+      font-size: .92rem;
+    }
+
+    .legal-links {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-top: 16px;
+    }
+
+    .legal-main {
+      padding: 30px;
+    }
+
+    .legal-title {
+      margin: 0 0 18px 0;
+      font-size: 2rem;
+      line-height: 1.1;
+      letter-spacing: -.04em;
+      text-transform: uppercase;
+      color: #f7f9ff;
+    }
+
+    .legal-doc p,
+    .legal-doc li {
+      color: var(--muted);
+      line-height: 1.85;
+      font-size: .92rem;
+    }
+
+    .legal-doc strong {
+      color: #f7f9ff;
+    }
+
+    .legal-doc ul {
+      padding-left: 1.25rem;
+    }
+
+    .legal-doc a {
+      color: #8db2ff;
+      text-decoration: underline;
+    }
+
+    .section-separator {
+      height: 1px;
+      background: rgba(255,255,255,.08);
+      margin: 28px 0;
+    }
+
+    .footer {
+      padding: 22px 0 40px;
+      color: var(--muted);
+      font-size: .8rem;
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+      border-top: 1px solid rgba(255,255,255,.07);
+      padding-top: 18px;
+    }
+
+    .code-tag {
+      color: var(--teal);
+    }
+
+    [data-lang] {
+      display: none;
+    }
+
+    html.lang-pl [data-lang="pl"] {
+      display: block;
+    }
+
+    html.lang-en [data-lang="en"] {
+      display: block;
+    }
+
+    html.lang-pl [data-lang-inline="pl"] {
+      display: inline;
+    }
+
+    html.lang-pl [data-lang-inline="en"] {
+      display: none;
+    }
+
+    html.lang-en [data-lang-inline="pl"] {
+      display: none;
+    }
+
+    html.lang-en [data-lang-inline="en"] {
+      display: inline;
+    }
+
+    @media (max-width: 980px) {
+      .hero-grid,
+      .legal-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .legal-sidebar {
+        position: static;
+      }
+    }
+
+    @media (max-width: 680px) {
+      .hero-copy,
+      .about-card,
+      .banner,
+      .product-card,
+      .legal-main {
+        padding: 22px;
+      }
+
+      .product-list {
+        grid-template-columns: 1fr;
+      }
+
+      .nav {
+        align-items: flex-start;
+      }
+    }
   </style>
 </head>
 <body>
   <header class="site-header">
     <div class="container nav">
-      <a class="brand" href="#home">
-        <img class="brand-logo" src="icons\ic_launcher.png" alt="Nadpłacaj logo">
+      <a class="brand" href="/">
+        <img class="brand-logo" src="icons/ic_brand_logo.png" alt="ShomCoLabs logo">
         <div class="brand-copy">
-          <strong>Nadpłacaj // ShomCoLabs</strong>
-          <span>credit overpayment toolkit</span>
+          <strong>ShomCoLabs</strong>
+          <span data-lang-inline="pl">mobile app development</span>
+          <span data-lang-inline="en">mobile app development</span>
         </div>
       </a>
-      <nav class="nav-links">
-        <a class="tab active" href="https://shomcolabs.com/nadplacaj/privacy/">⌂ HOME</a>
-        <a class="tab" href="https://shomcolabs.com/nadplacaj/privacy/">⛨ NADPŁACAJ | PRIVACY</a>
-        <a class="tab" href="https://shomcolabs.com/nadplacaj/terms/">⎆ NADPŁACAJ | TERMS</a>
-      </nav>
+
+
+      <div class="nav-links">
+        <button class="menu-button" type="Home">
+          <a data-lang-inline="pl" class="material-symbols-outlined" href="./index.html">home_app_logo</a>
+          <a data-lang-inline="en" class="material-symbols-outlined" href="./index.html">home_app_logo</a>
+        </button>
+
+        <div class="dropdown">
+          <button class="menu-button" type="button">
+            <span data-lang-inline="pl">▾ Produkty</span>
+            <span data-lang-inline="en">▾ Products</span>
+          </button>
+
+          <div class="dropdown-content">
+            <div class="dropdown-group">
+              <span class="dropdown-title">Nadpłacaj</span>
+              <a class="dropdown-link" href="/nadplacaj/privacy/index.html">
+                <span data-lang-inline="pl">Polityka prywatności</span>
+                <span data-lang-inline="en">Privacy Policy</span>
+              </a>
+              <a class="dropdown-link" href="/nadplacaj/terms/index.html">
+                <span data-lang-inline="pl">Terms of Use</span>
+                <span data-lang-inline="en">Terms of Use</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="lang-switch" aria-label="Language switcher">
+          <button class="lang-btn active" id="lang-pl" type="button">PL</button>
+          <button class="lang-btn" id="lang-en" type="button">EN</button>
+        </div>
+      </div>
     </div>
   </header>
 
+  <section class="hero">
+    <div class="container hero-grid">
+      <div class="panel hero-copy">
+        <div class="kicker">
+          <span data-lang-inline="pl">SHOMCOLABS</span>
+          <span data-lang-inline="en">SHOMCOLABS</span>
+        </div>
+
+        <div data-lang="pl">
+          <h1><span class="gradient-text">Od pomysłu do użytecznego </span><br>narzędzia.</br></h1></h1>
+          <p>
+            ShomCoLabs to moje studio, w ramach którego projektuję i rozwijam aplikacje mobilne.
+            Ta strona pełni rolę centralnego miejsca dla produktów, stron prawnych, polityk prywatności oraz
+            informacji kontaktowych.
+          </p>
+        </div>
+
+        <div data-lang="en">
+          <h1><span class="gradient-text">From idea to a useful </span><br>tool.</h1>
+          <p>
+            ShomCoLabs is my independent studio focused on designing and developing mobile applications.
+            This page serves as a central place for products, legal pages, privacy policies, and contact details.
+          </p>
+        </div>
+      </div>
+
+      <div class="hero-side">
+        <div class="panel about-card">
+          <h2 data-lang="pl">O mnie</h2>
+          <h2 data-lang="en">About me</h2>
+
+          <div data-lang="pl">
+            <p>
+              Jestem niezależnym developerem aplikacji mobilnych. Buduję produkty samodzielnie —
+              od pomysłu, przez UX i development, aż po wdrożenie i publikację.
+            </p>
+          </div>
+
+          <div data-lang="en">
+            <p>
+              I am an independent mobile app developer. I build products end to end —
+              from idea, UX, and development to deployment and release.
+            </p>
+          </div>
+        </div>
+
+        <div class="panel banner">
+          <h2 data-lang="pl">Wsparcie</h2>
+          <h2 data-lang="en">Support</h2>
+
+          <div data-lang="pl">
+          <p>Jeśli moje aplikacje są dla Ciebie pomocne, możesz wesprzeć ich rozwój wirtualną kawą.</p>
+          
+          <div class="buycoffee-box">
+          <a href="https://buycoffee.to/shomcolabs" target="_blank">
+          <img src="https://buycoffee.to/static/img/share/share-button-dark.png" alt="Postaw mi kawę na buycoffee.to">
+          </a></div>
+
+          </div>
+          
+          
+
+          <div data-lang="en">
+            <p>If my apps are helpful to you, you can support its development with a virtual coffee.</p>
+
+          <div class="buycoffee-box">
+          <a href="https://buycoffee.to/shomcolabs" target="_blank">
+          <img src="https://buycoffee.to/static/img/share/share-button-dark.png" alt="Buy a coffee at buycoffee.to">
+          </a></div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <footer class="footer">
     <div class="container footer-inner">
-      <div><span class="code-tag">NADPLACAJ.</span> developed by ShomCoLabs.</div>
-      <div>Contact: <a href="mailto:privacy@shomcolabs.com">privacy@shomcolabs.com</a></div>
+      <div>
+        <span class="code-tag">SHOMCOLABS.</span>
+        <span data-lang-inline="pl">mobile app development</span>
+        <span data-lang-inline="en">mobile app development</span>
+      </div>
+      <div>Contact: <a href="mailto:support@shomcolabs.com">support@shomcolabs.com</a></div>
+    <div>
+        <span data-lang-inline="pl">© 2026 ShomCoLabs. Wszelkie prawa zastrzeżone.</span>
+        <span data-lang-inline="en">© 2026 ShomCoLabs. All rights reserved.</span>
     </div>
+    </div>
+
+
+
   </footer>
+
+  <script>
+    const html = document.documentElement;
+    const btnPl = document.getElementById('lang-pl');
+    const btnEn = document.getElementById('lang-en');
+
+    function setLanguage(lang) {
+      html.classList.remove('lang-pl', 'lang-en');
+      html.classList.add('lang-' + lang);
+
+      btnPl.classList.toggle('active', lang === 'pl');
+      btnEn.classList.toggle('active', lang === 'en');
+
+      html.setAttribute('lang', lang);
+      localStorage.setItem('shomcolabs_lang', lang);
+    }
+
+    const savedLang = localStorage.getItem('shomcolabs_lang') || 'pl';
+    setLanguage(savedLang);
+
+    btnPl.addEventListener('click', () => setLanguage('pl'));
+    btnEn.addEventListener('click', () => setLanguage('en'));
+  </script>
+
 </body>
 </html>
