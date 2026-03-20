@@ -13,7 +13,17 @@
     .container{width:min(1160px, calc(100% - 32px));margin:0 auto}
     .site-header{position:sticky;top:0;z-index:30;backdrop-filter:blur(16px);background:rgba(7,11,22,.72);border-bottom:1px solid rgba(255,255,255,.06)}
     .nav{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:78px;flex-wrap:wrap}
-    .brand{display:flex;align-items:center;gap:14px;min-width:0}.brand-logo{width:44px;height:44px;border-radius:14px;padding:6px;background:linear-gradient(135deg, rgba(91,140,255,.24), rgba(79,209,197,.14));border:1px solid rgba(255,255,255,.08);box-shadow:var(--shadow)}
+    .brand{display:flex;align-items:center;gap:14px;min-width:0}
+  
+  .brand-logo{
+  width:44px;
+  height:44px;
+  border-radius:14px;
+  padding:0; /* <-- usuń padding */
+  background:none; /* <-- usuń tło */
+  border:none; /* opcjonalnie */
+  box-shadow:none;})}
+    
     .brand-copy strong{font-size:1rem;letter-spacing:.03em}.brand-copy span{color:var(--muted);font-size:.78rem}
     .nav-links{display:flex;align-items:center;gap:10px;flex-wrap:wrap}.tab{display:inline-flex;align-items:center;gap:10px;padding:11px 14px;border:1px solid rgba(255,255,255,.08);background:rgba(255,255,255,.03);border-radius:999px;color:var(--text);font-size:.84rem;transition:.2s ease}.tab:hover,.tab.active{transform:translateY(-1px);background:linear-gradient(135deg, rgba(91,140,255,.18), rgba(122,124,255,.18));border-color:rgba(126,149,255,.35)}
     .hero{padding:52px 0 26px}.hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:28px;align-items:stretch}.panel{background:linear-gradient(180deg, rgba(15,23,48,.88), rgba(10,16,33,.92));border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow)}
