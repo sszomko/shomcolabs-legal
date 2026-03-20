@@ -5,116 +5,282 @@
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>ShomCoLabs // NADPŁACAJ</title>
   <style>
-    :root{--bg:#070b16;--panel:#0f1730;--text:#eef2ff;--muted:#9eabcf;--primary:#5B8CFF;--teal:#4FD1C5;--line:rgba(126,149,255,.18);--radius:22px;--shadow:0 20px 60px rgba(0,0,0,.35)}
-    *{box-sizing:border-box}html{scroll-behavior:smooth}
-    body{margin:0;color:var(--text);background:radial-gradient(circle at 15% 15%, rgba(91,140,255,.22), transparent 32%),radial-gradient(circle at 80% 5%, rgba(79,209,197,.10), transparent 24%),linear-gradient(180deg,#05070f 0%,#090d1a 45%,#070b16 100%);font-family:"IBM Plex Mono","JetBrains Mono","SFMono-Regular","Consolas","Liberation Mono","Menlo",monospace}
-    body::before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.08;background-image:linear-gradient(rgba(255,255,255,.06) 1px, transparent 1px),linear-gradient(90deg, rgba(255,255,255,.05) 1px, transparent 1px);background-size:28px 28px;mask-image:linear-gradient(180deg, rgba(0,0,0,.75), transparent 90%)}
-    a{color:inherit;text-decoration:none} img{max-width:100%;display:block}
-    .container{width:min(1160px, calc(100% - 32px));margin:0 auto}
-    .site-header{position:sticky;top:0;z-index:30;backdrop-filter:blur(16px);background:rgba(7,11,22,.72);border-bottom:1px solid rgba(255,255,255,.06)}
-    .nav{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:78px;flex-wrap:wrap}
+    :root {
+      --bg: #070b16;
+      --panel: #0f1730;
+      --text: #eef2ff;
+      --muted: #9eabcf;
+      --primary: #5B8CFF;
+      --teal: #4FD1C5;
+      --line: rgba(126,149,255,.18);
+      --radius: 22px;
+      --shadow: 0 20px 60px rgba(0,0,0,.35);
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      color: var(--text);
+      background:
+        radial-gradient(circle at 15% 15%, rgba(91,140,255,.22), transparent 32%),
+        radial-gradient(circle at 80% 5%, rgba(79,209,197,.10), transparent 24%),
+        linear-gradient(180deg, #05070f 0%, #090d1a 45%, #070b16 100%);
+      font-family: "IBM Plex Mono","JetBrains Mono","SFMono-Regular","Consolas","Liberation Mono","Menlo",monospace;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      opacity: .08;
+      background-image:
+        linear-gradient(rgba(255,255,255,.06) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.05) 1px, transparent 1px);
+      background-size: 28px 28px;
+      mask-image: linear-gradient(180deg, rgba(0,0,0,.75), transparent 90%);
+    }
+
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+
+    .container {
+      width: min(1160px, calc(100% - 32px));
+      margin: 0 auto;
+    }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 30;
+      backdrop-filter: blur(16px);
+      background: rgba(7,11,22,.72);
+      border-bottom: 1px solid rgba(255,255,255,.06);
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      min-height: 78px;
+      flex-wrap: wrap;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      min-width: 0;
+      margin-left: 0;
+      padding-left: 0;
+    }
+
+    .brand-logo {
+      width: 44px;
+      height: 44px;
+      border-radius: 12px;
+      flex: 0 0 44px;
+    }
+
+    .brand-copy strong {
+      font-size: 1rem;
+      letter-spacing: .03em;
+    }
+
+    .brand-copy span {
+      color: var(--muted);
+      font-size: .78rem;
+    }
+
+    .panel {
+      background: linear-gradient(180deg, rgba(15,23,48,.88), rgba(10,16,33,.92));
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+
+    .legal-wrap {
+      padding: 30px 0 60px;
+    }
+
+    .legal-main {
+      padding: 30px;
+    }
+
     .legal-doc {
-  padding-left: 0;
-}
-  .legal-doc strong:first-child,
-.legal-doc p,
-.legal-doc ul {
-  margin-left: 0;
-  padding-left: 0;
-}
-  .brand{
-  display:flex;
-  align-items:center;
-  gap:14px;
-  min-width:0;
-  margin-left:0;
-  padding-left:0;
-}
-  
-  .brand-logo{
-  width:44px;
-  height:44px;
-  border-radius:14px;
-  padding:0; /* <-- usuń padding */
-  background:none; /* <-- usuń tło */
-  border:none; /* opcjonalnie */
-  box-shadow:none;})}
-    
-    .brand-copy strong{font-size:1rem;letter-spacing:.03em}.brand-copy span{color:var(--muted);font-size:.78rem}
-    .nav-links{display:flex;align-items:center;gap:10px;flex-wrap:wrap}.tab{display:inline-flex;align-items:center;gap:10px;padding:11px 14px;border:1px solid rgba(255,255,255,.08);background:rgba(255,255,255,.03);border-radius:999px;color:var(--text);font-size:.84rem;transition:.2s ease}.tab:hover,.tab.active{transform:translateY(-1px);background:linear-gradient(135deg, rgba(91,140,255,.18), rgba(122,124,255,.18));border-color:rgba(126,149,255,.35)}
-    .hero{padding:52px 0 26px}.hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:28px;align-items:stretch}.panel{background:linear-gradient(180deg, rgba(15,23,48,.88), rgba(10,16,33,.92));border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow)}
-    .hero-copy{padding:38px;position:relative;overflow:hidden}.hero-copy::after{content:"NADPLACAJ//FLOW";position:absolute;right:-16px;top:18px;font-size:.7rem;letter-spacing:.25em;color:rgba(255,255,255,.10);writing-mode:vertical-rl}.kicker{display:inline-flex;align-items:center;gap:10px;color:var(--teal);background:rgba(79,209,197,.08);border:1px solid rgba(79,209,197,.16);border-radius:999px;padding:8px 12px;font-size:.76rem;margin-bottom:18px}
-    h1{margin:0 0 16px;font-size:clamp(2rem,5vw,4rem);line-height:1;letter-spacing:-.04em;text-transform:uppercase}.gradient-text{background:linear-gradient(90deg,#fff 0%,#bfd4ff 35%,#6f8dff 70%,#4FD1C5 100%);-webkit-background-clip:text;background-clip:text;color:transparent}
-    .hero-copy p,.legal-sidebar p{margin:0;color:var(--muted);line-height:1.8;font-size:.98rem}.cta-row{display:flex;gap:12px;flex-wrap:wrap;margin-top:26px}.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:46px;padding:0 18px;border-radius:14px;font-size:.9rem;border:1px solid rgba(255,255,255,.08);transition:.2s ease}.btn-primary{color:#081225;background:linear-gradient(135deg,#7fa7ff,#4FD1C5);border:none}.btn-secondary{color:var(--text);background:rgba(255,255,255,.03)}
-    .hero-side{padding:26px;display:flex;flex-direction:column;gap:18px}.brand-card{display:grid;grid-template-columns:110px 1fr;gap:18px;align-items:center;padding:22px;background:linear-gradient(145deg, rgba(13,18,36,.96), rgba(10,15,28,.9));border-radius:20px;border:1px solid rgba(255,255,255,.08)}.hippo{width:100%;filter:drop-shadow(0 10px 30px rgba(0,0,0,.45))}.brand-text strong{display:block;font-size:1.5rem;letter-spacing:-.04em}.brand-text p{margin:.55rem 0 0;color:var(--muted);line-height:1.7;font-size:.88rem}
-    .metric-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}.metric{padding:18px;border-radius:18px;background:rgba(255,255,255,.035);border:1px solid rgba(255,255,255,.07)}.metric small{display:block;color:var(--muted);margin-bottom:8px}.metric strong{font-size:1.15rem}
-    .section{padding:18px 0 34px}.cards{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px}.card{padding:22px;background:linear-gradient(180deg, rgba(15,23,48,.86), rgba(9,14,27,.92));border:1px solid rgba(255,255,255,.08);border-radius:20px;box-shadow:var(--shadow)}.card .icon{width:42px;height:42px;display:grid;place-items:center;border-radius:14px;margin-bottom:14px;background:linear-gradient(135deg, rgba(91,140,255,.22), rgba(79,209,197,.16));border:1px solid rgba(255,255,255,.08);font-size:1.2rem}.card h3{margin:0 0 10px;font-size:1rem;text-transform:uppercase;letter-spacing:.04em}.card p{margin:0;color:var(--muted);line-height:1.7;font-size:.86rem}
-    .legal-wrap{padding:30px 0 60px}.legal-layout{display:grid;grid-template-columns:270px 1fr;gap:24px}.legal-sidebar{position:sticky;top:96px;align-self:start;padding:18px}.legal-sidebar h2{margin:0 0 14px;font-size:1rem;text-transform:uppercase;letter-spacing:.08em}.legal-links{display:flex;flex-direction:column;gap:10px;margin-top:16px}.legal-main{padding:30px}.legal-main .legal-doc{color:var(--text)}.legal-doc strong:first-child{display:block;margin-bottom:10px;font-size:2rem;letter-spacing:-.04em;text-transform:uppercase}.legal-doc p,.legal-doc li{color:var(--muted);line-height:1.85;font-size:.92rem}.legal-doc strong{color:#f7f9ff}.legal-doc ul{padding-left:1.25rem}.legal-doc a{color:#8db2ff;text-decoration:underline}
-    .footer{padding:22px 0 40px;color:var(--muted);font-size:.8rem}.footer-inner{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;border-top:1px solid rgba(255,255,255,.07);padding-top:18px}.code-tag{color:var(--teal)}
-    @media (max-width:980px){.hero-grid,.legal-layout,.cards{grid-template-columns:1fr}.legal-sidebar{position:static}}
-    @media (max-width:680px){.hero-copy,.hero-side,.legal-main{padding:22px}.brand-card{grid-template-columns:1fr}}
+      color: var(--text);
+      padding-left: 0;
+      margin: 0;
+    }
+
+    .legal-title {
+      margin: 0 0 18px 0;
+      padding: 0;
+      font-size: 2rem;
+      line-height: 1.1;
+      letter-spacing: -0.04em;
+      text-transform: uppercase;
+      color: #f7f9ff;
+    }
+
+    .legal-doc p,
+    .legal-doc li {
+      margin-left: 0;
+      color: var(--muted);
+      line-height: 1.85;
+      font-size: .92rem;
+    }
+
+    .legal-doc strong {
+      color: #f7f9ff;
+    }
+
+    .legal-doc ul {
+      padding-left: 1.25rem;
+      margin-left: 0;
+    }
+
+    .legal-doc a {
+      color: #8db2ff;
+      text-decoration: underline;
+    }
+
+    .footer {
+      padding: 22px 0 40px;
+      color: var(--muted);
+      font-size: .8rem;
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+      border-top: 1px solid rgba(255,255,255,.07);
+      padding-top: 18px;
+    }
+
+    .code-tag {
+      color: var(--teal);
+    }
+
+    .section-separator {
+      height: 1px;
+      background: rgba(255,255,255,.08);
+      margin: 28px 0;
+    }
+
+    @media (max-width: 680px) {
+      .legal-main {
+        padding: 22px;
+      }
+
+      .brand-copy strong {
+        font-size: .92rem;
+      }
+
+      .brand-copy span {
+        font-size: .72rem;
+      }
+
+      .legal-title {
+        font-size: 1.8rem;
+      }
+    }
   </style>
 </head>
 <body>
   <header class="site-header">
     <div class="container nav">
-      <a class="brand" href="#home">
-        <img class="brand-logo" src="index\icons\ic_launcher.png" alt="Nadpłacaj logo">
+      <a class="brand" href="#">
+        <img class="brand-logo" src="icons/ic_launcher.png" alt="Nadpłacaj logo">
         <div class="brand-copy">
           <strong>ShomCoLabs // NADPŁACAJ</strong>
           <span>credit overpayment toolkit</span>
         </div>
       </a>
-      <!-- <nav class="nav-links">
-        <a class="tab active" href="#home">⌂ HOME</a>
-        <a class="tab" href="#privacy">⛨ PRIVACY</a>
-        <a class="tab" href="#terms">⎆ TERMS</a>
-      </nav> -->
     </div>
   </header>
 
+  <section class="legal-wrap">
+    <div class="container">
       <main class="panel legal-main">
         <div class="legal-doc">
-          <strong>Privacy Policy</strong>
+          <h1 class="legal-title">Privacy Policy</h1>
+
           <p>This privacy policy applies to the Nadpłacaj app (hereby referred to as "Application") for mobile devices that was created by Sebastian Szomko (hereby referred to as "Service Provider") as an Ad Supported service. This service is intended for use "AS IS".</p>
+
           <strong>Information Collection and Use</strong>
           <p>The Application collects information when you download and use it. This information may include information such as:</p>
           <p>Financial data entered by the user in the Application, such as loan details, repayment entries, and overpayment calculations, is stored locally on the user's device and is not transmitted to the Service Provider's servers.</p>
-          <ul><li>Your device's Internet Protocol address (e.g. IP address)</li><li>The pages of the Application that you visit, the time and date of your visit, the time spent on those pages</li><li>The time spent on the Application</li><li>The operating system you use on your mobile device</li></ul>
+
+          <ul>
+            <li>Your device's Internet Protocol address (e.g. IP address)</li>
+            <li>The pages of the Application that you visit, the time and date of your visit, the time spent on those pages</li>
+            <li>The time spent on the Application</li>
+            <li>The operating system you use on your mobile device</li>
+          </ul>
+
           <p>The Application does not gather precise information about the location of your mobile device.</p>
           <p>The Application does not use Artificial Intelligence (AI) technologies to process your data or provide features.</p>
+
           <strong>Third Party Access</strong>
           <p>Only aggregated, anonymized data is periodically transmitted to external services to aid the Service Provider in improving the Application and their service. The Service Provider may share your information with third parties in the ways that are described in this privacy statement.</p>
-          <ul><li><a href="https://www.google.com/policies/privacy/" target="_blank" rel="noopener noreferrer">Google Play Services</a></li><li><a href="https://support.google.com/admob/answer/6128543?hl=en" target="_blank" rel="noopener noreferrer">AdMob</a></li><li><a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener noreferrer">Google Analytics for Firebase</a></li><li><a href="https://firebase.google.com/support/privacy/" target="_blank" rel="noopener noreferrer">Firebase Crashlytics</a></li></ul>
+
+          <ul>
+            <li><a href="https://www.google.com/policies/privacy/" target="_blank" rel="noopener noreferrer">Google Play Services</a></li>
+            <li><a href="https://support.google.com/admob/answer/6128543?hl=en" target="_blank" rel="noopener noreferrer">AdMob</a></li>
+            <li><a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener noreferrer">Google Analytics for Firebase</a></li>
+            <li><a href="https://firebase.google.com/support/privacy/" target="_blank" rel="noopener noreferrer">Firebase Crashlytics</a></li>
+          </ul>
+
           <strong>Opt-Out Rights</strong>
           <p>You can stop all collection of information by the Application easily by uninstalling it.</p>
+
           <strong>Data Retention Policy</strong>
           <p>The Service Provider will retain User Provided data for as long as you use the Application and for a reasonable time thereafter. If you'd like them to delete User Provided Data that you have provided via the Application, please contact them at privacy@shomcolabs.com and they will respond in a reasonable time.</p>
+
           <strong>Children</strong>
           <p>The Service Provider does not use the Application to knowingly solicit data from or market to children under the age of 13.</p>
+
           <strong>Security</strong>
           <p>The Service Provider is concerned about safeguarding the confidentiality of your information.</p>
+
           <strong>Changes</strong>
           <p>This privacy policy is effective as of 2026-03-20.</p>
+
           <strong>Contact Us</strong>
           <p>If you have any questions regarding privacy while using the Application, or have questions about the practices, please contact the Service Provider via email at privacy@shomcolabs.com.</p>
-        </div>
-      </main>
-    </div>
-  </section>
 
-      <main class="panel legal-main">
-        <div class="legal-doc">
-          <strong>Terms &amp; Conditions</strong>
+          <div class="section-separator"></div>
+
+          <h1 class="legal-title">Terms &amp; Conditions</h1>
+
           <p>These terms and conditions apply to the Nadpłacaj app (hereby referred to as "Application") for mobile devices that was created by Sebastian Szomko (hereby referred to as "Service Provider") as an Ad Supported service.</p>
+
           <p>Upon downloading or utilizing the Application, you are automatically agreeing to the following terms.</p>
+
           <p>Unauthorized copying, modification of the Application, any part of the Application, or our trademarks is strictly prohibited.</p>
+
           <p>The Service Provider is dedicated to ensuring that the Application is as beneficial and efficient as possible. As such, they reserve the right to modify the Application or charge for their services at any time and for any reason.</p>
+
           <p>Please note that the Application utilizes third-party services that have their own Terms and Conditions.</p>
-          <ul><li><a href="https://policies.google.com/terms" target="_blank" rel="noopener noreferrer">Google Play Services</a></li><li><a href="https://developers.google.com/admob/terms" target="_blank" rel="noopener noreferrer">AdMob</a></li><li><a href="https://www.google.com/analytics/terms/" target="_blank" rel="noopener noreferrer">Google Analytics for Firebase</a></li><li><a href="https://firebase.google.com/terms/crashlytics" target="_blank" rel="noopener noreferrer">Firebase Crashlytics</a></li></ul>
+
+          <ul>
+            <li><a href="https://policies.google.com/terms" target="_blank" rel="noopener noreferrer">Google Play Services</a></li>
+            <li><a href="https://developers.google.com/admob/terms" target="_blank" rel="noopener noreferrer">AdMob</a></li>
+            <li><a href="https://www.google.com/analytics/terms/" target="_blank" rel="noopener noreferrer">Google Analytics for Firebase</a></li>
+            <li><a href="https://firebase.google.com/terms/crashlytics" target="_blank" rel="noopener noreferrer">Firebase Crashlytics</a></li>
+          </ul>
+
           <p>The Service Provider may wish to update the application at some point. The application is currently available as per the requirements for the operating system.</p>
+
           <strong>Changes to These Terms and Conditions</strong>
           <p>These terms and conditions are effective as of 2026-03-20.</p>
+
           <strong>Contact Us</strong>
           <p>If you have any questions or suggestions about the Terms and Conditions, please do not hesitate to contact the Service Provider at support@shomcolabs.com.</p>
         </div>
